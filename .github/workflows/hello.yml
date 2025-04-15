@@ -6,3 +6,4 @@ jobs:
     steps:
       - run: echo "Hello, world!"
       - uses: actions/checkout@v4
+      - run: echo "実行者は${{ github.actor}}です"
