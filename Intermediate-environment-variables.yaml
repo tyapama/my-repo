@@ -1,0 +1,11 @@
+name: Intermediate environment variables
+
+on: push
+
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    env:
+      ACTOR: ${{ github.actor }}
+    steps:
+      - run: echo "ワークフローの実行者は${ACTOR}です"
