@@ -6,4 +6,39 @@ jobs:
     steps:
       - run: exit 1
       - run: echo "Failure"
-        # if: ${{ failure() }}
+        if: ${{ failure() }}
+
+# satotaishi@satouhiroshinoMacBook-Pro my-repo % make view
+# gh run view
+# ? Select a workflow run X Failure status func, Failure status [master] 17s ago
+
+# X master Failure status · 14483435723
+# Triggered via push less than a minute ago
+
+# JOBS
+# X failure in 4s (ID 40624583543)
+#   ✓ Set up job
+#   X Run exit 1
+#   ✓ Run echo "Failure"
+#   ✓ Complete job
+
+# ANNOTATIONS
+# X Process completed with exit code 1.
+# failure: .github#5
+
+# comment out failure func
+# satotaishi@satouhiroshinoMacBook-Pro my-repo % make watch
+# gh run watch
+# ? Select a workflow run * comment out failure func, Failure status [master] 2s ago
+# X master Failure status · 14483451734
+# Triggered via push less than a minute ago
+
+# JOBS
+# X failure in 2s (ID 40624629537)
+#   ✓ Set up job
+#   X Run exit 1
+#   - Run echo "Failure"
+#   ✓ Complete job
+
+# ANNOTATIONS
+# X Process completed
