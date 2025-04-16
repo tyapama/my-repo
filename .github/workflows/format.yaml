@@ -8,5 +8,5 @@ jobs:
         env:
           FORMAT_FUNC: ${{ format('{0}, {1}.', 'Hi', 'world') }} # FORMAT_FUNC=Hi, world.
           JOIN_FUNC: ${{ join(github.event.*.html_url, ', ') }}  # カンマで結合”
-      - run: echo ${FORMAT_FUNC}
-      - run: echo ${JOIN_FUNC}
+      - run: echo "${FORMAT_FUNC}"
+      - run: echo "${JOIN_FUNC}"
