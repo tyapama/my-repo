@@ -1,4 +1,8 @@
 
+.PHONY: help
+help:
+	gh --help
+
 # 実行中のワークフローを確認する
 .PHONY: watch
 watch:
