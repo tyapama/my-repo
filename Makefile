@@ -17,3 +17,7 @@ view:
 .PHONY: manual-run
 manual-run:
 	gh workflow run manual.yml -f greeting=goodbye
+
+.PHONY: lint
+lint:
+	docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" rhysd/actionlint:latest
